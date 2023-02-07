@@ -10,4 +10,8 @@
 	  <PackageReference Include="ExcelDna.AddIn" Version="*-*" />
   </ItemGroup>
 
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+	<Exec Command="if &quot;$(ConfigurationName)&quot; == &quot;Release&quot; ( xcopy &quot;$(TargetDir)$(TargetName).dll&quot; &quot;$(SolutionDir)Deployment\&quot; /s /i /y )&#xD;&#xA;if &quot;$(ConfigurationName)&quot; == &quot;Release&quot; ( xcopy &quot;$(TargetDir)ExcelDna.IntelliSense.dll&quot; &quot;$(SolutionDir)Deployment\&quot; /s /i /y )&#xD;&#xA;if &quot;$(ConfigurationName)&quot; == &quot;Release&quot; ( xcopy &quot;$(TargetDir)$(TargetName)-AddIn.dna&quot; &quot;$(SolutionDir)Deployment\&quot; /s /i /y )&#xD;&#xA;if &quot;$(ConfigurationName)&quot; == &quot;Release&quot; ( xcopy &quot;$(TargetDir)$(TargetName)-AddIn.xll&quot; &quot;$(SolutionDir)Deployment\&quot; /s /i /y )&#xD;&#xA;if &quot;$(ConfigurationName)&quot; == &quot;Release&quot; ( xcopy &quot;$(TargetDir)$(TargetName)-AddIn64.dna&quot; &quot;$(SolutionDir)Deployment\&quot; /s /i /y )&#xD;&#xA;if &quot;$(ConfigurationName)&quot; == &quot;Release&quot; ( xcopy &quot;$(TargetDir)$(TargetName)-AddIn64.xll&quot; &quot;$(SolutionDir)Deployment\&quot; /s /i /y )" />
+  </Target>
+
 </Project>

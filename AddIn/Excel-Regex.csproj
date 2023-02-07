@@ -1,0 +1,13 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+	<TargetFramework>net6.0-windows</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+	  <PackageReference Include="ExcelDna.Integration" Version="*-*" />
+	  <PackageReference Include="ExcelDna.IntelliSense" Version="*-*" />
+	  <PackageReference Include="ExcelDna.AddIn" Version="*-*" />
+  </ItemGroup>
+
+</Project>
